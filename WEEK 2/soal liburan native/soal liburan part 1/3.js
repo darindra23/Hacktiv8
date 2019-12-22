@@ -33,49 +33,38 @@
 function mostCarsByState (cars) {
   //code below here
   var tampung =[];
-  var counterB = 0;
-  var counterD = 0;
-  var counterA = 0;
-  var counterC = 0;
+  var counter = 0
 
-  // PLAT B
   for(i = 0; i < cars.length; i++){
-    if(cars [i] === 'B'){
-      counterB ++
+    switch(cars[i]){
+      case 'B':
+        counter ++;
+        tampung.push('B');
+        tampung.push(counter/cars.length * 100);
+        counter = 0;
+        break;
+      case 'D':
+        counter ++;
+        tampung.push('D');
+        tampung.push(counter/cars.length * 100);
+        counter = 0;
+        break;
+      case 'A':
+        counter ++;
+        tampung.push('A');
+        tampung.push(counter/cars.length * 100);
+        counter = 0;
+        break;
+      case 'C':
+        counter ++;
+        tampung.push('C');
+        tampung.push(counter/cars.length * 100);
+        counter = 0;
+        break;
     }
-  } 
-  tampung.push('B')
-  tampung.push(counterB/cars.length * 100)
-  
-  //PLAT D
-  for(i = 0; i < cars.length; i++){
-    if(cars [i] === 'D'){
-      counterD ++
-    }
-  } 
-  tampung.push('D')
-  tampung.push(counterD/cars.length * 100)
-  
-  //PLAT A
-  for(i = 0; i < cars.length; i++){
-    if(cars [i] === 'A'){
-      counterA ++
-    }
-  } 
-  tampung.push('A')
-  tampung.push(counterA/cars.length * 100)
-  
-  //PLAT A
-  for(i = 0; i < cars.length; i++){
-    if(cars [i] === 'C'){
-      counterC ++
-    }
-  } 
-  tampung.push('C')
-  tampung.push(counterC/cars.length * 100)
-
+  }
   return tampung
-};
+}
 
 
 console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D']));
