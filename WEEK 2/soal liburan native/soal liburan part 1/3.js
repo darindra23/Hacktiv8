@@ -32,40 +32,29 @@
 
 function mostCarsByState (cars) {
   //code below here
-  var tampung =[];
-  var counter = 0
+  var plat = ['A','B','C','D'], count; 
+  for (i = 0; i < plat.length; i++) { 
+    count = 0;
+    for (j = 0; j < cars.length; j++) {
+      if (cars[j] === plat[i]) {
+        count++;
+      }
+    }
+    plat[i] = [plat[i],100*count/cars.length];
+  }
 
-  for(i = 0; i < cars.length; i++){
-    switch(cars[i]){
-      case 'B':
-        counter ++;
-        tampung.push('B');
-        tampung.push(counter/cars.length * 100);
-        counter = 0;
-        break;
-      case 'D':
-        counter ++;
-        tampung.push('D');
-        tampung.push(counter/cars.length * 100);
-        counter = 0;
-        break;
-      case 'A':
-        counter ++;
-        tampung.push('A');
-        tampung.push(counter/cars.length * 100);
-        counter = 0;
-        break;
-      case 'C':
-        counter ++;
-        tampung.push('C');
-        tampung.push(counter/cars.length * 100);
-        counter = 0;
-        break;
+  var tmp;
+  for (i = 0; i < plat.length-1; i++) { 
+    for (j = 0; j < plat.length-1-i; j++) {
+      if (plat[j][1] < plat[j+1][1]) {
+        tmp = plat[j];
+        plat[j] = plat[j+1];
+        plat[j+1] = tmp;
+      }
     }
   }
-  return tampung
-}
-
+  return plat;
+};
 
 console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D']));
 /*
