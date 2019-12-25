@@ -1,12 +1,14 @@
 var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
 
 const dataHandling2 = arr =>{
+    // Perintah 1
     arr.splice(1, 4, arr[1]+'Elsharawy', 'Provinsi '+ arr[2],arr[3],'Pria','SMA Internasional Metro')
-    var tanggal = arr[3].split('/')
-    var split = arr[3].split('/') 
-    var split1 = arr[3].split('/') 
-    var slice = arr.slice(1,2)
+    console.log(arr)
 
+    // Perintah 2
+    var split = arr[3].split('/')
+    var tanggal = arr[3].split('/')
+    
     switch(tanggal[1]){
         case '01':
             tanggal[1] = 'Januari';
@@ -45,13 +47,29 @@ const dataHandling2 = arr =>{
             tanggal[1] = 'Desember';
             break; 
     }
-    console.log(arr)
     console.log(tanggal[1])
-    console.log(split.sort())
-    console.log(split1.join('-'))
-    console.log(slice)
 
+    //Perintah 3
+    descending = []
+    descending.push(split[0],split[1],split[2])
+
+    for(i = 0; i < split.length; i++){
+        for(j = 0; j < split.length; j++){
+            if(Number(descending[j]) < Number(descending[j+1])){
+                var tmp = descending[j]
+                descending[j] = descending[j+1]
+                descending[j+1] = tmp
+            }
+        }
+        
+    }
+    console.log(descending)
     
+    //Perintah 4
+    console.log(split.join('-'))
 
+    //Perintah 5
+    return arr[1].slice(0,15)
 }
+
 console.log(dataHandling2(input))
