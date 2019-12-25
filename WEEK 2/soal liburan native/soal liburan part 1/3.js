@@ -32,7 +32,7 @@
 
 function mostCarsByState (cars) {
   //code below here
-  var plat = ['A','B','C','D'], count; 
+  var plat = ['A','B','C','D']; 
   for (i = 0; i < plat.length; i++) { 
     count = 0;
     for (j = 0; j < cars.length; j++) {
