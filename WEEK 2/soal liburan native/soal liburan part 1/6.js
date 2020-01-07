@@ -37,7 +37,13 @@ function partialCheck(str, partial) {
   var counter = 0;
 
   for(i = 0; i < str.length; i++){
-    if(string[i]+string[i+1]+string[i+2] === partial){
+    var tmp = 0
+    for (j = 0; j < partial.length; j++) {
+      if(string[i+j] === partial[j]){
+        tmp++
+      }
+    }
+    if(tmp === partial.length){
         counter ++
       }
   }

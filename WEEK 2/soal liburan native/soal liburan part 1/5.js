@@ -30,7 +30,6 @@ function palindromeChanger(number){
             var kanan = Math.floor(nomor % 10);
             reversed = reversed * 10 + kanan;
             nomor = Math.floor(nomor/10)}
-
       } while ( reversed != number[i])
       display.push(reversed)
     } 
