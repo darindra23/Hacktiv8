@@ -29,7 +29,7 @@ STORE STRING to lowercase
 STORE COUNTER with 0 value
 DO LOOPS to check if 3 string EQUAL to partial
 IF 3 string equal to partial add +1 to counter
-RETURN COUNTER
+DISPLAY COUNTER
 */
 
 function partialCheck(str, partial) {
