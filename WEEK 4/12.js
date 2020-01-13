@@ -10,13 +10,13 @@ function countProfit(shoppers) {
    var display = []
    for (i = 0; i < listBarang.length; i++) {
        var profit = {}
-       var amount = 0
        var tmp = []
+       var amount = 0
        for (j = 0; j < shoppers.length; j++) {
            if(listBarang[i][0] === shoppers[j].product && listBarang[i][2] >= shoppers[j].amount){
+            tmp.push(shoppers[j].name)
             listBarang[i][2] -= shoppers[j].amount
             amount += listBarang[i][1] * shoppers[j].amount
-            tmp.push(shoppers[j].name)
         }
     }
     profit.product = listBarang[i][0]
