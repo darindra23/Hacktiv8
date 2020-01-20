@@ -11,7 +11,6 @@ function highestScore (students) {
                 display[students[i].class] = students[i]
             }
         }
-
     }
     // HILANGKAN CLASS
     for(let key in display){
