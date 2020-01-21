@@ -1,6 +1,6 @@
 function totalDigitRekursif(angka) {
     // you can only write your code here!
-    if(angka <u 10){
+    if(angka < 10){
       return angka
     } else {
       return angka % 10 + totalDigitRekursif(Math.floor(angka/10))
